@@ -1,3 +1,5 @@
+
+<%@ page import="com.example.demo.model.CompanyShare"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +14,8 @@
 </head>
 <body>
     <div align="center">
+       
+
         <table class="table table-bordered table-stripped">
             <thead>
             <tr>
@@ -21,16 +25,23 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="companydetails : ${listofcompanies}">
-                <td><%=companydetails.getCompanyId()%>
-                </td>
-                <td><%=companydetails.getCompanyName()%>
-                </td>
-                <td><%=companydetails.getSharePrice()%>
-                </td>
-               
-            </tr>
-            </tbody>
+                    <%
+                        Iterable<CompanyShare> transactions = (Iterable<CompanyShare>) request.getAttribute("listofcompanies");
+                        for (CompanyShare transaction : transactions) {
+                    %>
+                    <tr>
+                        <td><%=transaction.getCompanyId()%>
+                        </td>
+                        <td><%=transaction.getCompanyName()%>
+                        </td>
+                        <td><%=transaction.getSharePrice()%>
+                        </td>
+                        
+                    </tr>
+                    <%
+                        }
+                    %>
+                    </tbody>
         </table> 
 
     </div>

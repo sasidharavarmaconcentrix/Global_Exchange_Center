@@ -41,6 +41,7 @@ public class GlobalExchangeCentreApplication {
 		 new_company1.setSharePrice(101.00);
 		 gec_service.saveCompany(new_company1);
 		 gec_service.fetchcompanybyid(10000001);
+		 //System.out.println(gec_service.getListOfCpmpanies());
 		// gec_service.deleteemployeebyid(10000001);
 		 
 		 //gec_service.updatepricebyid((long)l0000001,102.00)

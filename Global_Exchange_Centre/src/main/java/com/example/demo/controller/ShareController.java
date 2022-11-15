@@ -14,6 +14,7 @@ public class ShareController {
     @GetMapping("/")
     public String viewlistofcompanies(Model model) {
     	model.addAttribute("listofcompanies",gec_service.getListOfCpmpanies());
+    	
     	System.out.println("ji");
 		return "home_companies_list";
     }
