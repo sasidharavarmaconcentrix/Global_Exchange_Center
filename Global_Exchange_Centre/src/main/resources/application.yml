@@ -1,0 +1,17 @@
+debug: true
+server:
+  port: 7082
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@nsiva1-lp.pkrmsezdc.com:1522/xe
+    username: sys as sysdba
+    password: admin@123
+  jpa:
+    show-sql: true
+    hibernate:
+       ddl-auto: update      
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp

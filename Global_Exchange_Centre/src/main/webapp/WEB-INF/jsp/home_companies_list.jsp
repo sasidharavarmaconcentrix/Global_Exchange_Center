@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Companies Share Price</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div align="center">
+        <table class="table table-bordered table-stripped">
+            <thead>
+            <tr>
+                <th>CompanyId</th>
+                <th>CompanyName</th>
+                <th>SharePrice</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="companydetails : ${listofcompanies}">
+                <td><%=companydetails.getCompanyId()%>
+                </td>
+                <td><%=companydetails.getCompanyName()%>
+                </td>
+                <td><%=companydetails.getSharePrice()%>
+                </td>
+               
+            </tr>
+            </tbody>
+        </table> 
+
+    </div>
+</body>
+</html>
