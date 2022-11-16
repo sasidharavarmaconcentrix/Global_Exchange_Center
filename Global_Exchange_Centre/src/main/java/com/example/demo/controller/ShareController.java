@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,29 @@ public class ShareController {
         CompanyShare companyshare=new CompanyShare(CompanyID,CompanyName,SharePrice);
         gec_service.saveCompany(companyshare);
         ModelAndView modelAndView = new ModelAndView("redirect:/"); 
+        return modelAndView;
+    }
+//    @GetMapping("/DeleteFromList/{CompanyId}")
+//    public ModelAndView DeleteCompanyFromList(@PathVariable("CompanyId") long CompanyId , Model model) {
+//    	gec_service.deleteemployeebyid(CompanyId);
+//    	ModelAndView modelAndView = new ModelAndView("redirect:/"); 
+//    	return modelAndView;
+//    	
+//    }
+//    @GetMapping("/delete-todo")
+//    public String deleteTdo(
+//            @RequestParam int id
+//    ) {
+//        System.out.println(id);
+//        todoRepository.deleteById(id);
+//        return "redirect:/todos";
+//    }
+    @GetMapping("/delete-company")
+    public ModelAndView deletecompany(
+            @RequestParam("CompanyId") long CompanyId
+    ) {
+    	gec_service.deleteemployeebyid(CompanyId);
+    	ModelAndView modelAndView = new ModelAndView("redirect:/"); 
         return modelAndView;
     }
 }

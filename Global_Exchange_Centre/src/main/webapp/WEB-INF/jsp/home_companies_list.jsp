@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  	
 <%@ page import="com.example.demo.model.CompanyShare"%>
 <!DOCTYPE html>
 <html>
@@ -26,10 +26,13 @@
             </tr>
             </thead>
             <tbody>
-                    <%
+                   <!--  <%
                         Iterable<CompanyShare> transactions = (Iterable<CompanyShare>) request.getAttribute("listofcompanies");
                         for (CompanyShare transaction : transactions) {
                     %>
+                 
+                     
+                    
                     <tr>
                         <td><%=transaction.getCompanyId()%>
                         </td>
@@ -37,11 +40,30 @@
                         </td>
                         <td><%=transaction.getSharePrice()%>
                         </td>
+                        <td>
+                          <td>
+                                 <a href="delete-company?CompanyId=${transaction.getCompanyId()}" >delete</a>
+                                 |
+                                 <a href="${templink}">Update</a>                                              
+                          </td> 
                         
                     </tr>
                     <%
                         }
-                    %>
+                    %>-->
+                     <c:forEach var="companylist" items="${listofcompanies}"> 
+                         <tr>
+                             <td> ${companylist.companyId}</td>
+                             <td> ${companylist.companyName}</td>
+                             <td> ${companylist.sharePrice}</td>
+                              <td>
+                                 <a href="delete-company?CompanyId=${companylist.companyId}" >delete</a>
+                                 |
+                                 <a href="${templink}">Update</a>                                              
+                          </td> 
+                        
+                         </tr>
+                     </c:forEach>
                     </tbody>
         </table> 
 

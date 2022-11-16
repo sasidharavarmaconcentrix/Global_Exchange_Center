@@ -30,7 +30,7 @@ public class GEC_Service_Impl implements GEC_Service {
 	}
 
 	@Transactional
-
+    @Override
 	public void saveCompany(CompanyShare companyshare) {
 		// TODO Auto-generated method stub
 		companysharerepository.save(companyshare);
