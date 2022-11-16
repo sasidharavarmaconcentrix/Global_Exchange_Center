@@ -20,6 +20,15 @@ public class CompanyShare {
 		return "CompanyShare [companyId=" + companyId + ", companyName=" + companyName + ", sharePrice=" + sharePrice
 				+ "]";
 	}
+	public CompanyShare(Long companyId, String companyName, Double sharePrice) {
+		super();
+		this.companyId = companyId;
+		this.companyName = companyName;
+		this.sharePrice = sharePrice;
+	}
+	public CompanyShare() {
+		// TODO Auto-generated constructor stub
+	}
 	public Long getCompanyId() {
 		return companyId;
 	}

@@ -13,8 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <a href="AddCompany" class="btn btn-sm btn-primary">Add Company</a>
     <div align="center">
-       
+    
 
         <table class="table table-bordered table-stripped">
             <thead>
