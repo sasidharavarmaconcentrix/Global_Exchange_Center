@@ -10,7 +10,7 @@ import com.example.demo.model.CompanyShare;
 public interface GEC_Service {
 	Iterable<CompanyShare> getListOfCpmpanies();
 	void saveCompany(CompanyShare companyshare);
-	void deleteemployeebyid(long companyID);
+	void deletecompanybyid(long companyID);
 	void updatepricebyid(long companyID,double shareprice);
 	Optional<CompanyShare> fetchcompanybyid(long companyID);
 	

@@ -34,7 +34,10 @@ public class ShareController {
     @GetMapping("/AddCompany")
     public ModelAndView AddCompanytoList(Model model) {
 		//System.out.println("Add te company");
+    	
     	ModelAndView modelAndView = new ModelAndView("Add_new_Company_form"); 
+    	
+    
     	return modelAndView;
     	
     }

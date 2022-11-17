@@ -37,7 +37,7 @@ public class GEC_Service_Impl implements GEC_Service {
 	}
 
 	@Override
-	public void deleteemployeebyid(long companyID) {
+	public void deletecompanybyid(long companyID) {
 		// TODO Auto-generated method stub
 		companysharerepository.deleteById(companyID);
 	}
