@@ -26,10 +26,10 @@ public class GlobalExchangeCentreApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationcontext=SpringApplication.run(GlobalExchangeCentreApplication.class,args);
 	    
-	//CompanyShareRepository repo = applicationcontext.getBean(CompanyShareRepository.class);
+	
 		 GEC_Service_Impl gec_service =applicationcontext.getBean(GEC_Service_Impl.class);
-//		
-		 System.out.println(gec_service.fetchcompanybyid(10000001));
+		
+		 
 	}
 
 }

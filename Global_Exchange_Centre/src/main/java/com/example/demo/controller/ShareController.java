@@ -80,8 +80,19 @@ public class ShareController {
     {
     	//gec_service.deleteemployeebyid(CompanyId);
     	Optional<CompanyShare> companyshare=gec_service. fetchcompanybyid(CompanyId);
+//      companyshare.ifPresent(value -> System.out.println((value)));
+//		companyshare.orElseThrow();
+    	//System.out.println(companyshare.get());
+    	CompanyShare companyshare1=companyshare.get();
+    	System.out.println(companyshare1.getCompanyName());
+    	System.out.println(companyshare1.getSharePrice());
+    	
     	ModelAndView modelAndView = new ModelAndView("update_teamform"); 
-    	modelAndView.addObject("companyshare",companyshare);
+    	modelAndView.addObject("companyid",companyshare1.getCompanyId());
+    	modelAndView.addObject("companyname",companyshare1.getCompanyName());
+    	//modelAndView.addObject("shareprice",companyshare1.getCompanyId());
+    	modelAndView.addObject("shareprice", companyshare1.getSharePrice());
+    	//modelAndView.addObject("companyshare",companyshare);
         return modelAndView;
     }
     @PostMapping("/update_company_toList")
