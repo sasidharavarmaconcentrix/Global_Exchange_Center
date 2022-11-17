@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,9 +67,32 @@ public class ShareController {
     @GetMapping("/delete-company")
     public ModelAndView deletecompany(
             @RequestParam("CompanyId") long CompanyId
-    ) {
+    ) 
+    {
     	gec_service.deleteemployeebyid(CompanyId);
     	ModelAndView modelAndView = new ModelAndView("redirect:/"); 
+        return modelAndView;
+    }
+    @GetMapping("/update-company")
+    public ModelAndView updatecompany(
+            @RequestParam("CompanyId") long CompanyId
+    ) 
+    {
+    	//gec_service.deleteemployeebyid(CompanyId);
+    	Optional<CompanyShare> companyshare=gec_service. fetchcompanybyid(CompanyId);
+    	ModelAndView modelAndView = new ModelAndView("update_teamform"); 
+    	modelAndView.addObject("companyshare",companyshare);
+        return modelAndView;
+    }
+    @PostMapping("/update_company_toList")
+    public ModelAndView doupdate(
+            @RequestParam("CompanyID") long CompanyID,
+            @RequestParam("CompanyName") String CompanyName,
+            @RequestParam("SharePrice") Double SharePrice) {
+            
+        CompanyShare companyshare=new CompanyShare(CompanyID,CompanyName,SharePrice);
+        gec_service.saveCompany(companyshare);
+        ModelAndView modelAndView = new ModelAndView("redirect:/"); 
         return modelAndView;
     }
 }

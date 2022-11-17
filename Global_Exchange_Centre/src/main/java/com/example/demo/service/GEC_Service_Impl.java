@@ -54,4 +54,6 @@ public class GEC_Service_Impl implements GEC_Service {
 		// TODO Auto-generated method stub
 		return companysharerepository.findById(companyID);
 	}
+
+	
 }

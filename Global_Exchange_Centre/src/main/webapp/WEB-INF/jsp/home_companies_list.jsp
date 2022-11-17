@@ -59,7 +59,7 @@
                               <td>
                                  <a href="delete-company?CompanyId=${companylist.companyId}" >delete</a>
                                  |
-                                 <a href="${templink}">Update</a>                                              
+                                 <a href="update-company?CompanyId=${companylist.companyId}">Update</a>                                              
                           </td> 
                         
                          </tr>

@@ -29,6 +29,7 @@ public class GlobalExchangeCentreApplication {
 	//CompanyShareRepository repo = applicationcontext.getBean(CompanyShareRepository.class);
 		 GEC_Service_Impl gec_service =applicationcontext.getBean(GEC_Service_Impl.class);
 //		
+		 System.out.println(gec_service.fetchcompanybyid(10000001));
 	}
 
 }
