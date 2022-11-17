@@ -19,7 +19,7 @@
                 <form action="add_new_company_toList" method="post">
                     <div class="form-group">
                         <label class="form-control-label" for="CompanyID">CompanyID</label>
-                        <input type="text" class="form-control" id="CompanyID" placeholder="CompanyID"  name="CompanyID"/>
+                        <input type="text" class="form-control" id="CompanyID" placeholder="CompanyID" value=${lastid} readonly="readonly" name="CompanyID"/>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="CompanyName">CompanyName</label>

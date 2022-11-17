@@ -36,8 +36,8 @@ public class ShareController {
 		//System.out.println("Add te company");
     	
     	ModelAndView modelAndView = new ModelAndView("Add_new_Company_form"); 
-    	
-    
+    	modelAndView.addObject("lastid", gec_service.findlastid());
+       
     	return modelAndView;
     	
     }
@@ -72,7 +72,7 @@ public class ShareController {
             @RequestParam("CompanyId") long CompanyId
     ) 
     {
-    	gec_service.deleteemployeebyid(CompanyId);
+    	gec_service.deletecompanybyid(CompanyId);
     	ModelAndView modelAndView = new ModelAndView("redirect:/"); 
         return modelAndView;
     }
@@ -87,8 +87,8 @@ public class ShareController {
 //		companyshare.orElseThrow();
     	//System.out.println(companyshare.get());
     	CompanyShare companyshare1=companyshare.get();
-    	System.out.println(companyshare1.getCompanyName());
-    	System.out.println(companyshare1.getSharePrice());
+//    	System.out.println(companyshare1.getCompanyName());
+//    	System.out.println(companyshare1.getSharePrice());
     	
     	ModelAndView modelAndView = new ModelAndView("update_teamform"); 
     	modelAndView.addObject("companyid",companyshare1.getCompanyId());

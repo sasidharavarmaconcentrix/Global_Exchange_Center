@@ -55,5 +55,8 @@ public class GEC_Service_Impl implements GEC_Service {
 		
 		return companysharerepository.findById(companyID);
 	}
+	public int findlastid() {
+		return (companysharerepository.findlastid()+1);
+	}
 
 	}

@@ -13,5 +13,6 @@ public interface GEC_Service {
 	void deletecompanybyid(long companyID);
 	void updatepricebyid(long companyID,double shareprice);
 	Optional<CompanyShare> fetchcompanybyid(long companyID);
+	public int findlastid();
 	
 }

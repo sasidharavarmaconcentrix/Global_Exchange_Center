@@ -57,7 +57,7 @@
                              <td> ${companylist.companyName}</td>
                              <td> ${companylist.sharePrice}</td>
                               <td>
-                                 <a href="delete-company?CompanyId=${companylist.companyId}" >delete</a>
+                                 <a href="delete-company?CompanyId=${companylist.companyId} " >delete</a>
                                  |
                                  <a href="update-company?CompanyId=${companylist.companyId}">Update</a>                                              
                           </td> 
